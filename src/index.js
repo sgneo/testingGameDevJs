@@ -4,7 +4,14 @@ window.GAME_DEBUGG = {}
 
 
 
-const game = new Game()
-game.init()
-game.update()
 
+const start = async () => {
+
+  const game = new Game()
+
+  await game.init()
+  game.update()
+
+}
+
+start();
