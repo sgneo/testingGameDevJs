@@ -1,10 +1,10 @@
-import Game from "./game";
+import Game from "./game"
 
-window.GAME_DEBUGG = {};
+window.GAME_DEBUGG = {}
 
 
 
-const game = new Game();
-game.init();
-game.update();
+const game = new Game()
+game.init()
+game.update()
 
