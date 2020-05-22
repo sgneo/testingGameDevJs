@@ -16,12 +16,15 @@ export const loadSpriteSheet = async (name) => {
 
   const spriteSheet = new SpriteSheet(imageSpec);
 
+  let index = 0;
   for (let key in spriteSpec.frames) {
     const data =  spriteSpec.frames[key].frame;
-    const noExtension = key.split(".").shift();
-    const noDigitsNoExtension = noExtension.split("_")[0];
+    // const noExtension = key.split(".").shift();
+    // const noDigitsNoExtension = noExtension.split("_")[0];
 
-    spriteSheet.define(noDigitsNoExtension, data.x, data.y, data.w, data.h);
+    spriteSheet.define(index, data.x, data.y, data.w, data.h);
+    // spriteSheet.setIndexesMap(key, index);
+    index++;
   }
 
   return spriteSheet;
