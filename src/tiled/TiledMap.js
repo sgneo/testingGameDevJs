@@ -54,11 +54,18 @@ export default class TiledMap {
     this.layouts.push(layout)
   }
 
-  draw(context, x = 0, y = 0, index = 0) {
+  draw(context, camera, pos, index = 0) {
     const buffers = this.layouts[index]
 
     buffers.forEach(buffer => {
-      context.drawImage(buffer, x, y)
+      context.drawImage(buffer,
+        pos.x - camera.pos.x,
+        pos.y - camera.pos.y
+      )
     })
+  }
+
+  createLayer(context, x = 0, y = 0, index = 0) {
+    return () => this.draw(context, x, y, index)
   }
 }
