@@ -42,8 +42,8 @@ export default class TiledMap {
             spriteSheet.draw(
               tileIndex,
               context,
-              x * tileWidth,
-              y * tileHeight)
+              y * tileWidth,
+              x * tileHeight)
           }
         })
 

@@ -8,12 +8,12 @@ export default class Screen {
   }
 
   init() {
+    const body = document.getElementsByTagName("body")[0]
     this.canvas = document.createElement("canvas")
-    this.canvas.style.width = this.width + "px"
-    this.canvas.style.height = this.height + "px"
+    this.canvas.width = 800
+    this.canvas.height = 600
     this.context = this.canvas.getContext("2d")
 
-    const body = document.getElementsByTagName("body")[0]
     body.appendChild(this.canvas)
   }
 
