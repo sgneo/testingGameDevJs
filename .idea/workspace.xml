@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4c728bf-1b02-4898-ad41-59f7bc49ea6c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Compositor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Layer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LightEvent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/camera/Camera.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layers/camera.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Input/keyboard/Keyboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/input/keyboard/Keyboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Input/keyboard/KeyboardMapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/input/keyboard/KeyboardMapper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Input/keyboard/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/input/keyboard/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tiled/TiledMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/tiled/TiledMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -119,11 +109,29 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/webpack.config.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="75">
+                  <caret line="5" selection-start-line="5" selection-end-line="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Entity.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="360">
+                  <caret line="24" column="12" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/tiled/TiledMap.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="643">
-                  <caret line="62" column="26" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
+                <state relative-caret-position="343">
+                  <caret line="42" column="7" lean-forward="true" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
                 </state>
               </provider>
             </entry>
@@ -140,8 +148,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/math/Matrix.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="523">
-                  <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+                <state relative-caret-position="525">
+                  <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
@@ -181,6 +189,7 @@
       <find>EventEmitter</find>
       <find>Keyboard</find>
       <find>10;</find>
+      <find>main</find>
     </findStrings>
     <replaceStrings>
       <replace>spriteSheet</replace>
@@ -203,7 +212,6 @@
         <option value="$PROJECT_DIR$/src/enums/world_map_objects.js" />
         <option value="$PROJECT_DIR$/src/loaders/index.js" />
         <option value="$PROJECT_DIR$/src/assets/sprites/world/world.json" />
-        <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/src/Atlas.js" />
         <option value="$PROJECT_DIR$/src/loaders/atlas.js" />
         <option value="$PROJECT_DIR$/src/Keyboard.js" />
@@ -229,12 +237,14 @@
         <option value="$PROJECT_DIR$/src/Compositor.js" />
         <option value="$PROJECT_DIR$/src/Scene.js" />
         <option value="$PROJECT_DIR$/src/Layer.js" />
-        <option value="$PROJECT_DIR$/src/tiled/TiledMap.js" />
         <option value="$PROJECT_DIR$/src/camera/Camera.js" />
         <option value="$PROJECT_DIR$/src/input/keyboard/Keyboard.js" />
         <option value="$PROJECT_DIR$/src/LightEvent.js" />
         <option value="$PROJECT_DIR$/src/Renderer.js" />
         <option value="$PROJECT_DIR$/src/game.js" />
+        <option value="$PROJECT_DIR$/src/tiled/TiledMap.js" />
+        <option value="$PROJECT_DIR$/webpack.config.js" />
+        <option value="$PROJECT_DIR$/src/Entity.js" />
       </list>
     </option>
   </component>
@@ -267,47 +277,7 @@
             <path>
               <item name="testingGameDevJs" type="b2602c69:ProjectViewProjectNode" />
               <item name="testingGameDevJs" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testingGameDevJs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testingGameDevJs" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="sprites" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testingGameDevJs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testingGameDevJs" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="sprites" type="462c0819:PsiDirectoryNode" />
-              <item name="worldmap" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testingGameDevJs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testingGameDevJs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testingGameDevJs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testingGameDevJs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="camera" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testingGameDevJs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testingGameDevJs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="input" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testingGameDevJs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testingGameDevJs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="input" type="462c0819:PsiDirectoryNode" />
-              <item name="keyboard" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -358,12 +328,12 @@
       <workItem from="1589911052837" duration="4493000" />
       <workItem from="1589975647249" duration="6797000" />
       <workItem from="1590144530354" duration="11609000" />
-      <workItem from="1590230873195" duration="12713000" />
+      <workItem from="1590230873195" duration="14105000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35612000" />
+    <option name="totallyTimeSpent" value="37004000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="6" />
@@ -460,13 +430,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/maps/map_01.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
@@ -551,13 +514,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/math/Matrix.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -590,13 +546,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tiled/TiledMap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="643">
-          <caret line="62" column="26" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -666,6 +615,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tiled/TiledMap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="42" column="7" lean-forward="true" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/math/Matrix.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="12" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
         </state>
       </provider>
     </entry>
