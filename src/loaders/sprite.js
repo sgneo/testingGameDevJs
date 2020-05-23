@@ -1,5 +1,5 @@
 import {loadJSON, loadImage} from './index.js'
-import SpriteSheet from "../SpriteSheet";
+import SpriteSheet from "../SpriteSheet"
 
 //todo separate object by name or smth
 
@@ -14,19 +14,19 @@ export const loadSpriteSheet = async (name) => {
   //todo if there are elements like tree_01, tree_02, we should create an array for each element as in:
   // trees[01, 02]
 
-  const spriteSheet = new SpriteSheet(imageSpec);
+  const spriteSheet = new SpriteSheet(imageSpec)
 
-  let index = 0;
+  let index = 1 // start conting from 1 since we want to ignore drawing on '0'
   for (let key in spriteSpec.frames) {
-    const data =  spriteSpec.frames[key].frame;
-    // const noExtension = key.split(".").shift();
-    // const noDigitsNoExtension = noExtension.split("_")[0];
+    const data =  spriteSpec.frames[key].frame
+    // const noExtension = key.split(".").shift()
+    // const noDigitsNoExtension = noExtension.split("_")[0]
 
-    spriteSheet.define(index, data.x, data.y, data.w, data.h);
-    // spriteSheet.setIndexesMap(key, index);
-    index++;
+    spriteSheet.define(index, data.x, data.y, data.w, data.h)
+    // spriteSheet.setIndexesMap(key, index)
+    index++
   }
 
-  return spriteSheet;
+  return spriteSheet
 
 }

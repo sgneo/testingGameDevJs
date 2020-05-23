@@ -2,6 +2,9 @@ export default class Screen {
   constructor() {
     this.width = window.innerWidth
     this.height = window.innerHeight
+
+    this.canvas = null
+    this.context = null
   }
 
   init() {
@@ -12,5 +15,9 @@ export default class Screen {
 
     const body = document.getElementsByTagName("body")[0]
     body.appendChild(this.canvas)
+  }
+
+  clear() {
+    this.context.clearRect(0, 0, this.width, this.height)
   }
 }

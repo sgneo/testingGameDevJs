@@ -1,5 +1,5 @@
 import {loadJSON, loadImage} from './index.js'
-import Map from "../Map";
+import Map from "../Map"
 
 //todo separate object by name or smth
 
@@ -10,7 +10,7 @@ export const loadMap = async (name) => {
 
   const {width, height, data} = mapSpec.layers[0]
 
-  const map = new Map(data, width, height);
+  const map = new Map(data, width, height)
 
-  return map;
+  return map
 }

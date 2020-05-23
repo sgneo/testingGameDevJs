@@ -41,4 +41,4 @@ KeyMapper.set(56, KEYS.KEY_8)
 KeyMapper.set(57, KEYS.KEY_9)
 
 
-export default KeyMapper;
+export default KeyMapper

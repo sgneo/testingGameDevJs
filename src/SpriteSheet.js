@@ -1,11 +1,11 @@
 export default class SpriteSheet {
   constructor(image) {
-    this.image = image;
+    this.image = image
 
 
     //todo make them tiles somehow
     this.tiles = new Map()
-    this.indexesMap = new Map();
+    this.indexesMap = new Map()
   }
 
   /**
@@ -42,28 +42,28 @@ export default class SpriteSheet {
         0,
         0,
         width,
-        height);
+        height)
 
-      return buffer;
+      return buffer
     })
 
-    this.tiles.set(name, buffers);
+    this.tiles.set(name, buffers)
   }
 
   setIndexesMap(name, index) {
-    this.indexesMap.set(name, index);
+    this.indexesMap.set(name, index)
   }
 
   getIndex(name) {
-    return this.indexesMap.get(name);
+    return this.indexesMap.get(name)
   }
 
   getNumSameType(name) {
-    return this.tiles.get(name).length;
+    return this.tiles.get(name).length
   }
 
-  draw(name, context, x=0, y=0, flip = false) {
-    const buffer = this.tiles.get(name)[flip ? 1 : 0];
-    context.drawImage(buffer, x, y);
+  draw(name, context, x = 0, y = 0, flip = false) {
+    const buffer = this.tiles.get(name)[flip ? 1 : 0]
+    context.drawImage(buffer, x, y)
   }
 }

@@ -8,7 +8,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
 	"sourceSize": {"w":32,"h":32}
 },
-"tree_01.png":
+"grass_02.png":
 {
 	"frame": {"x":32,"y":0,"w":32,"h":32},
 	"rotated": false,
@@ -16,7 +16,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
 	"sourceSize": {"w":32,"h":32}
 },
-"tree_02.png":
+"road_01.png":
 {
 	"frame": {"x":64,"y":0,"w":32,"h":32},
 	"rotated": false,
@@ -24,7 +24,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
 	"sourceSize": {"w":32,"h":32}
 },
-"tree_03.png":
+"tree_01.png":
 {
 	"frame": {"x":96,"y":0,"w":32,"h":32},
 	"rotated": false,
@@ -32,9 +32,25 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
 	"sourceSize": {"w":32,"h":32}
 },
-"water_01.png":
+"tree_02.png":
 {
 	"frame": {"x":128,"y":0,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+"tree_03.png":
+{
+	"frame": {"x":160,"y":0,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+"water_01.png":
+{
+	"frame": {"x":192,"y":0,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
@@ -45,8 +61,8 @@
 	"version": "1.0",
 	"image": "worldmap.png",
 	"format": "RGBA8888",
-	"size": {"w":160,"h":32},
+	"size": {"w":224,"h":32},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:b59cd0a366f7f03c3f315511bfaab76d:a4905820e868e25a7ffb0bfc916f548d:65720d0b0221dd206469c56bfa8f56cd$"
+	"smartupdate": "$TexturePacker:SmartUpdate:b73451a8a8fcadd6f529650b52be626f:5635e6fd435073cf569c04e4f982e0f7:65720d0b0221dd206469c56bfa8f56cd$"
 }
 }

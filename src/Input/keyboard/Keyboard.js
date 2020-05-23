@@ -1,5 +1,5 @@
-import * as KEYS from "./constants";
-import KeyMapper from './KeyboardMapper';
+import * as KEYS from "./constants"
+import KeyMapper from './KeyboardMapper'
 
 const PRESSED = 0x1
 const RELEASED = 0x2
@@ -20,7 +20,7 @@ export default class Keyboard {
   handleEvent(event) {
     const { keyCode } = event
 
-    const code = KeyMapper.get(keyCode);
+    const code = KeyMapper.get(keyCode)
 
     if (!this.keyMap.has(code)) {
       // Did not have key mapped.
