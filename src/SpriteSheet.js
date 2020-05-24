@@ -5,7 +5,9 @@ export default class SpriteSheet {
 
     //todo make them tiles somehow
     this.tiles = new Map()
+    this.tilesById = new Map()
     this.indexesMap = new Map()
+    this.tilesCache = new Map()
   }
 
   /**
@@ -20,7 +22,7 @@ export default class SpriteSheet {
    *  - normal as in sprite
    *  - horizontally flipped
    */
-  define(name, x, y, width, height) {
+  define(name, id, x, y, width, height) {
     const buffers = [false, true].map(flip => {
       const buffer = document.createElement('canvas')
       buffer.width = width
@@ -47,23 +49,18 @@ export default class SpriteSheet {
       return buffer
     })
 
+    this.tilesById.set(id, buffers)
     this.tiles.set(name, buffers)
-  }
-
-  setIndexesMap(name, index) {
-    this.indexesMap.set(name, index)
-  }
-
-  getIndex(name) {
-    return this.indexesMap.get(name)
-  }
-
-  getNumSameType(name) {
-    return this.tiles.get(name).length
+    this.tilesCache.set(id, name)
   }
 
   draw(name, context, x = 0, y = 0, flip = false) {
     const buffer = this.tiles.get(name)[flip ? 1 : 0]
+    context.drawImage(buffer, x, y)
+  }
+
+  drawById(id, context, x = 0, y = 0, flip = false) {
+    const buffer = this.tilesById.get(id)[flip ? 1 : 0]
     context.drawImage(buffer, x, y)
   }
 }

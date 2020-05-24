@@ -16,17 +16,15 @@ export const loadSpriteSheet = async (name) => {
 
   const spriteSheet = new SpriteSheet(imageSpec)
 
-  let index = 1 // start conting from 1 since we want to ignore drawing on '0'
+  let id = 1 // start conting from 1 since we want to ignore drawing on '0'
+
   for (let key in spriteSpec.frames) {
     const data =  spriteSpec.frames[key].frame
-    // const noExtension = key.split(".").shift()
-    // const noDigitsNoExtension = noExtension.split("_")[0]
+    const name = key.split(".").shift().split("_").shift();
 
-    spriteSheet.define(index, data.x, data.y, data.w, data.h)
-    // spriteSheet.setIndexesMap(key, index)
-    index++
+    spriteSheet.define(name, id, data.x, data.y, data.w, data.h)
+    id++
   }
 
   return spriteSheet
-
 }

@@ -1,5 +1,4 @@
 import {loadJSON, loadImage} from '../loaders/index.js'
-// import Map from "../Map"
 import TiledMap from "./TiledMap"
 import Vec2 from "../math/Vec2"
 import Matrix from '../math/Matrix'
@@ -49,6 +48,7 @@ const parseTiledMap = async (mapSpec) => {
 
   for (let tileSetSpec of mapSpec.tilesets) {
     const name = tileSetSpec.image.split("/").pop().split(".").shift()
+
     promisses.push(
       loadSpriteSheet(name)
     )
@@ -59,7 +59,6 @@ const parseTiledMap = async (mapSpec) => {
   })
 
   return formattedData
-
 }
 
 export const loadTiledMap = async (name) => {

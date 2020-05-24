@@ -52,12 +52,18 @@ export default class Game {
     // this.worldMapAssets = await loadSpriteSheet("worldmap")
     const map = await loadTiledMap("map_01")
     const mapLayerId = Symbol("layerId")
+    const entitiesLayerId = Symbol("layerId")
     const mapPos = new Vec2(0, 0);
+
     const mapLayer = new Layer(mapLayerId,
-      (context, camera) => map.draw(context, camera, mapPos)
+      (context, camera) => map.drawGround(context, camera, mapPos)
     );
+    const entitiesLayer = new Layer(entitiesLayerId,
+      (context, camera) => map.drawEntities(context, camera)
+      )
 
     this.renderer.addLayer(mapLayer);
+    this.renderer.addLayer(entitiesLayer);
   }
 
   draw() {

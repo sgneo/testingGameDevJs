@@ -1,4 +1,8 @@
-import SpriteSheet from "../SpriteSheet"
+import Entity from "../entities/Entity";
+import Tree from "../entities/Tree";
+const GROUND = "ground"
+const TERRAIN_OBJECTS = "terrain_objects"
+
 
 export default class TiledMap {
   constructor(layers, tileSets, tileWidth, tileHeight, widthInTiles, heightInTiles) {
@@ -10,6 +14,7 @@ export default class TiledMap {
     this.heightInTiles = heightInTiles
 
     this.layouts = []
+    this.entities = []
   }
 
   getTotalWidth() {
@@ -20,52 +25,110 @@ export default class TiledMap {
     return this.tileHeight * this.heightInTiles
   }
 
+
+  defineGround(layer, tileSet) {
+    const { name, grid } = layer
+    const {spriteSheet, tileWidth, tileHeight} = tileSet
+
+    const buffer = document.createElement('canvas')
+    const context = buffer.getContext('2d')
+
+    buffer.width = this.getTotalWidth()
+    buffer.height = this.getTotalHeight()
+
+    grid.forEach((tileIndex, x, y) => {
+
+      if (tileIndex !== 0) {
+
+        spriteSheet.drawById(
+          tileIndex,
+          context,
+          y * tileWidth,
+          x * tileHeight)
+      }
+    })
+
+    this.layouts.push(buffer)
+  }
+
+  defineEntities(layer, tileSet) {
+    const { name, grid } = layer
+    const {spriteSheet, tileWidth, tileHeight} = tileSet
+
+    grid.forEach((tileIndex, x, y) => {
+      if (tileIndex !== 0) {
+        const entityName = spriteSheet.tilesCache.get(tileIndex)
+        // const entity = new Entity(entityName);
+        //todo make this calable
+        const entity = new Tree(entityName);
+        entity.buffer =spriteSheet.tilesById.get(tileIndex)[0];
+        entity.pos.x = y * tileWidth;
+        entity.pos.y = x * tileHeight;
+
+        this.entities.push(entity);
+      }
+    })
+
+
+    console.log("ENTITIES", this.entities);
+
+
+  }
+
   define() {
     const layout = []
 
+    const tileSet = this.tileSets[0];
 
-    this.tileSets.forEach(tileSet => {
-      const {spriteSheet, tileWidth, tileHeight} = tileSet
+    const {spriteSheet, tileWidth, tileHeight} = tileSet
 
-      this.layers.forEach(layer => {
-        const { grid } = layer
-        const buffer = document.createElement('canvas')
-        const context = buffer.getContext('2d')
+    for (const layer of this.layers) {
+      const { name, grid } = layer
 
-        buffer.width = this.getTotalWidth()
-        buffer.height = this.getTotalHeight()
+      if (name === GROUND) {
+        this.defineGround(layer, tileSet);
+      } else {
+        //entities
+        this.defineEntities(layer, tileSet);
+      }
+      //
+      // const buffer = document.createElement('canvas')
+      // const context = buffer.getContext('2d')
+      //
+      // buffer.width = this.getTotalWidth()
+      // buffer.height = this.getTotalHeight()
+      //
+      // grid.forEach((tileIndex, x, y) => {
+      //
+      //   if (tileIndex !== 0) {
+      //
+      //     spriteSheet.draw(
+      //       tileIndex,
+      //       context,
+      //       y * tileWidth,
+      //       x * tileHeight)
+      //   }
+      // })
+      //
+      // layout.push(buffer)
+    }
 
-        grid.forEach((tileIndex, x, y) => {
-
-          if (tileIndex !== 0) {
-
-            spriteSheet.draw(
-              tileIndex,
-              context,
-              y * tileWidth,
-              x * tileHeight)
-          }
-        })
-
-        layout.push(buffer)
-      })
-    })
 
     this.layouts.push(layout)
   }
 
-  draw(context, camera, pos, index = 0) {
-    const buffers = this.layouts[index]
+  drawGround(context, camera, pos, index = 0) {
+    const buffer = this.layouts[index]
 
-    buffers.forEach(buffer => {
-      context.drawImage(buffer,
-        pos.x - camera.pos.x,
-        pos.y - camera.pos.y
-      )
-    })
+    context.drawImage(buffer,
+      pos.x - camera.pos.x,
+      pos.y - camera.pos.y
+    )
   }
 
-  createLayer(context, x = 0, y = 0, index = 0) {
-    return () => this.draw(context, x, y, index)
+  drawEntities(context, camera) {
+    for (const entity of this.entities) {
+      entity.draw(context, camera)
+    }
   }
 }

@@ -1,6 +1,10 @@
-import Vec2 from "./math/Vec2";
+import Vec2 from "../math/Vec2";
 
 
+/**
+ * Everything in the game can be an entity, including trees/rocks
+ * Only layer 0 (the bg won't be considered entity)
+ */
 export default class Entity {
   constructor(name) {
     this.name = name
@@ -26,7 +30,7 @@ export default class Entity {
 
   }
 
-  draw() {
+  draw(context, camera) {
 
   }
 }
